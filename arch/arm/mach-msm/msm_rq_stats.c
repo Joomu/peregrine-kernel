@@ -247,6 +247,30 @@ out:
 static ssize_t hotplug_disable_show(struct kobject *kobj,
 		struct kobj_attribute *attr, char *buf)
 {
+	return snprintf(buf, MAX_LONG_SIZE, "%d\n", rq_info.hotplug_disabled);
+}
+
+static ssize_t store_hotplug_enable(struct kobject *kobj,
+				     struct kobj_attribute *attr,
+				     const char *buf, size_t count)
+{
+	struct cpufreq_policy *policy = data;
+	struct cpu_load_data *this_cpu = &per_cpu(cpuload, policy->cpu);
+
+	if (event != CPUFREQ_NOTIFY)
+		goto out;
+
+	this_cpu->policy_max = policy->max;
+
+	pr_debug("Policy max changed from %u to %u, event %lu\n",
+			this_cpu->policy_max, policy->max, event);
+out:
+	return NOTIFY_DONE;
+}
+
+static ssize_t hotplug_disable_show(struct kobject *kobj,
+		struct kobj_attribute *attr, char *buf)
+{
 	unsigned int val = 0;
 	val = rq_info.hotplug_disabled;
 	return snprintf(buf, MAX_LONG_SIZE, "%d\n", val);
