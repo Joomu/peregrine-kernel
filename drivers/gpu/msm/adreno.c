@@ -92,7 +92,9 @@ static struct devfreq_simple_ondemand_data adreno_ondemand_data = {
 
 static struct devfreq_msm_adreno_tz_data adreno_tz_data = {
 	.bus = {
-		.max = 450,
+
+		.max = 550,
+
 	},
 	.device_id = KGSL_DEVICE_3D0,
 };
@@ -141,7 +143,7 @@ static struct adreno_device device_3d0 = {
 		.pm_dump_enable = 0,
 	},
 	.gmem_base = 0,
-	.gmem_size = SZ_256K,
+	.gmem_size = SZ_512K,
 	.pfp_fw = NULL,
 	.pm4_fw = NULL,
 	.wait_timeout = 0, /* in milliseconds, 0 means disabled */
