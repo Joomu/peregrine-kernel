@@ -1,0 +1,3 @@
+[submodule "motorola-kernel"]
+	path = motorola-kernel
+	url = https://github.com/MotorolaMobilityLLC/motorola-kernel
