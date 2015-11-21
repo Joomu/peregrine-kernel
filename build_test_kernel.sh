@@ -8,5 +8,5 @@ export KBUILD_BUILD_USER=Joomu
 export KBUILD_BUILD_HOST=localhost
 
 make clean
-make peregrine_defconfig
+make peregrine_test_defconfig
 make -j5
