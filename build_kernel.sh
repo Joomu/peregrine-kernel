@@ -4,5 +4,6 @@ export ARCH=arm
 export SUBARCH=arm
 export CROSS_COMPILE=arm-cortex_a7-linux-gnueabihf-
 
+make clean
 make peregrine_defconfig
 make -j5
