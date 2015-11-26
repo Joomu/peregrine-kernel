@@ -1,8 +1,8 @@
 [submodule "motorola-kernel"]
 	path = motorola-kernel
 	url = https://github.com/Joomu/motorola-kernel.git
-	branch = lollipop-5.0.2-release
+	branch = 5.1.1
 [submodule "drivers/staging/prima"]
 	path = drivers/staging/prima
 	url = https://github.com/Joomu/vendor-qcom-opensource-wlan-prima.git
-	branch = lollipop-5.0.2-release
+	branch = 5.1.1
