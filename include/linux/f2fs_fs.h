@@ -1,1 +1,1 @@
-../../../motorola/kernel/include/linux/f2fs_fs.h
+../../moto_ext/f2fs/include/linux/f2fs_fs.h

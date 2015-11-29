@@ -1,0 +1,6 @@
+[submodule "moto_ext/f2fs"]
+	path = moto_ext/f2fs
+	url = https://github.com/Joomu/motorola-kernel
+[submodule "moto_ext/prima"]
+	path = moto_ext/prima
+	url = https://github.com/Joomu/vendor-qcom-opensource-wlan-prima.git

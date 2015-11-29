@@ -1,1 +1,1 @@
-../../../../motorola/kernel/include/trace/events/f2fs.h
+../../../moto_ext/f2fs/include/trace/events/f2fs.h
