@@ -28,6 +28,9 @@ mv ../zip_peregrine/system/lib/modules/wlan.ko ../zip_peregrine/system/lib/modul
 # Copy zImage
 cp -f arch/arm/boot/zImage-dtb ../zip_peregrine/kernel/;
 
+# Clean
+make clean
+
 version="$1";
 
 # Set zip name
