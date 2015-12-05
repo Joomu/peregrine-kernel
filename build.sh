@@ -28,13 +28,18 @@ mv ../zip_peregrine/system/lib/modules/wlan.ko ../zip_peregrine/system/lib/modul
 # Copy zImage
 cp -f arch/arm/boot/zImage-dtb ../zip_peregrine/kernel/;
 
-# Clean
-make clean
-
 version="$1";
 
-# Set zip name
+# Build zip for recovery
 zipname="Joomu-Peregrine-v"$version;
 cd ../zip_peregrine
 zip -r9 $zipname.zip * > /dev/null;
 mv -f $zipname.zip ../release_peregrine;
+
+cd ../peregrine-kernel
+
+# Build boot.img
+../mkbootimg/mkbootimg --kernel arch/arm/boot/zImage-dtb --ramdisk ../mkbootimg/newramdisk.cpio.gz --cmdline "console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags movablecore=160M" --base 0x00000000 --pagesize 2048 --output ../release_peregrine/$zipname.img
+
+# Clean
+make clean
